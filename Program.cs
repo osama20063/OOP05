@@ -670,35 +670,87 @@ namespace Assignment_5_oop
 
 
 
-        //    public static class DeliveryUtilities
-        //{
-        //    public static void PrintSystemTitle()
-        //    {
-        //        Console.WriteLine("=================================");
-        //        Console.WriteLine("     SHIPMENT MANAGEMENT SYSTEM  ");
-        //        Console.WriteLine("=================================");
-        //    }
+            //    public static class DeliveryUtilities
+            //{
+            //    public static void PrintSystemTitle()
+            //    {
+            //        Console.WriteLine("=================================");
+            //        Console.WriteLine("     SHIPMENT MANAGEMENT SYSTEM  ");
+            //        Console.WriteLine("=================================");
+            //    }
 
-        //    public static void PrintSeparator()
-        //    {
-        //        Console.WriteLine("---------------------------------");
-        //    }
+            //    public static void PrintSeparator()
+            //    {
+            //        Console.WriteLine("---------------------------------");
+            //    }
+            //}
+
+            //public class Shipment
+            //{
+            //    private static int TotalShipmentsCreated = 0;
+
+            //    public int ShipmentId { get; set; }
+
+            //    public Shipment()
+            //    {
+            //        TotalShipmentsCreated++;
+            //    }
+
+            //    public static int GetTotalShipmentsCreated()
+            //    {
+            //        return TotalShipmentsCreated;
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        DeliveryUtilities.PrintSystemTitle();
+
+            //        Shipment shipment1 = new Shipment();
+            //        Shipment shipment2 = new Shipment();
+
+            //        DeliveryUtilities.PrintSeparator();
+
+            //        Console.WriteLine($"Total Shipments: {Shipment.GetTotalShipmentsCreated()}");
+
+            //        DeliveryUtilities.PrintSeparator();
+            //    }
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+            #region  
+
+        //    public class Shipment
+        //{
+        //    public string TrackingCode { get; set; }
+        //    public string Type { get; set; }
+        //    public double WeightInKg { get; set; }
+        //    public string TrackingStatus { get; set; }
         //}
 
-        //public class Shipment
+        //public static class ShipmentExtensions
         //{
-        //    private static int TotalShipmentsCreated = 0;
-
-        //    public int ShipmentId { get; set; }
-
-        //    public Shipment()
+        //    public static string GetSummary(this Shipment shipment)
         //    {
-        //        TotalShipmentsCreated++;
+        //        return $"{shipment.TrackingCode} | {shipment.Type} | {shipment.WeightInKg} KG | {shipment.TrackingStatus}";
         //    }
 
-        //    public static int GetTotalShipmentsCreated()
+        //    public static bool IsDelivered(this Shipment shipment)
         //    {
-        //        return TotalShipmentsCreated;
+        //        return shipment.TrackingStatus?.Equals("Delivered", StringComparison.OrdinalIgnoreCase) ?? false;
         //    }
         //}
 
@@ -706,19 +758,33 @@ namespace Assignment_5_oop
         //{
         //    static void Main()
         //    {
-        //        DeliveryUtilities.PrintSystemTitle();
+        //        Shipment shipment1 = new Shipment
+        //        {
+        //            TrackingCode = "SH001",
+        //            Type = "Standard",
+        //            WeightInKg = 3,
+        //            TrackingStatus = "In Transit"
+        //        };
 
-        //        Shipment shipment1 = new Shipment();
-        //        Shipment shipment2 = new Shipment();
+        //        Shipment shipment2 = new Shipment
+        //        {
+        //            TrackingCode = "SH002",
+        //            Type = "Express",
+        //            WeightInKg = 1.5,
+        //            TrackingStatus = "Delivered"
+        //        };
 
-        //        DeliveryUtilities.PrintSeparator();
+        //        Console.WriteLine(shipment1.GetSummary());
+        //        Console.WriteLine($"Is Delivered? {shipment1.IsDelivered()}");
 
-        //        Console.WriteLine($"Total Shipments: {Shipment.GetTotalShipmentsCreated()}");
-
-        //        DeliveryUtilities.PrintSeparator();
+        //        Console.WriteLine(shipment2.GetSummary());
+        //        Console.WriteLine($"Is Delivered? {shipment2.IsDelivered()}");
         //    }
+        //}
+
+
 
             #endregion
-        }
+    }
     }
 }
