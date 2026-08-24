@@ -401,6 +401,58 @@ namespace Assignment_5_oop
 
 
 
+            //    public class Address
+            //{
+            //    public string City { get; set; }
+            //}
+
+            //public class Shipment
+            //{
+            //    public int ShipmentId { get; set; }
+            //    public Address DeliveryAddress { get; set; }
+
+            //    public Shipment ShallowCopy()
+            //    {
+            //        return (Shipment)this.MemberwiseClone();
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment originalShipment = new Shipment
+            //        {
+            //            ShipmentId = 1,
+            //            DeliveryAddress = new Address { City = "Cairo" }
+            //        };
+
+            //        Shipment copiedShipment = originalShipment.ShallowCopy();
+
+            //        copiedShipment.DeliveryAddress.City = "Alexandria";
+
+            //        Console.WriteLine(originalShipment.DeliveryAddress.City);
+            //        Console.WriteLine(copiedShipment.DeliveryAddress.City);
+
+            //        Console.WriteLine(object.ReferenceEquals(originalShipment, copiedShipment));
+            //        Console.WriteLine(object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress));
+            //    }
+            //}
+
+            #endregion
+
+
+
+            #region 3 Deep Copy
+
+
+
+
+
+
+
+
+
         //    public class Address
         //{
         //    public string City { get; set; }
@@ -411,9 +463,16 @@ namespace Assignment_5_oop
         //    public int ShipmentId { get; set; }
         //    public Address DeliveryAddress { get; set; }
 
-        //    public Shipment ShallowCopy()
+        //    public Shipment DeepCopy()
         //    {
-        //        return (Shipment)this.MemberwiseClone();
+        //        return new Shipment
+        //        {
+        //            ShipmentId = this.ShipmentId,
+        //            DeliveryAddress = new Address
+        //            {
+        //                City = this.DeliveryAddress?.City
+        //            }
+        //        };
         //    }
         //}
 
@@ -427,22 +486,26 @@ namespace Assignment_5_oop
         //            DeliveryAddress = new Address { City = "Cairo" }
         //        };
 
-        //        Shipment copiedShipment = originalShipment.ShallowCopy();
+        //        Shipment copiedShipment = originalShipment.DeepCopy();
 
-        //        copiedShipment.DeliveryAddress.City = "Alexandria";
+        //        Console.WriteLine($"Before change:\t\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
 
-        //        Console.WriteLine(originalShipment.DeliveryAddress.City);
-        //        Console.WriteLine(copiedShipment.DeliveryAddress.City);
+        //        copiedShipment.DeliveryAddress.City = "Giza";
 
-        //        Console.WriteLine(object.ReferenceEquals(originalShipment, copiedShipment));
-        //        Console.WriteLine(object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress));
+        //        Console.WriteLine($"After changing copied:\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
+
+        //        bool isSameAddress = object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress);
+        //        Console.WriteLine($"Same DeliveryAddress object?\t{isSameAddress}");
         //    }
-        //}
+        
+
+
+
+
+
+
 
             #endregion
-
-
-
     }
     }
 }
