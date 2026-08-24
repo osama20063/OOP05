@@ -518,6 +518,52 @@ namespace Assignment_5_oop
             #region  4 Static Field
 
 
+            //    public class Address
+            //{
+            //    public string City { get; set; }
+            //}
+
+            //public class Shipment
+            //{
+            //    public static int TotalShipmentsCreated = 0;
+
+            //    public int ShipmentId { get; set; }
+            //    public Address DeliveryAddress { get; set; }
+
+            //    public Shipment()
+            //    {
+            //        TotalShipmentsCreated++;
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment shipment1 = new Shipment();
+            //        Shipment shipment2 = new Shipment();
+            //        Shipment shipment3 = new Shipment();
+
+            //        Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
+            //    }
+
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+            #region 5 Static Constructor
+
+
+
         //    public class Address
         //{
         //    public string City { get; set; }
@@ -525,10 +571,16 @@ namespace Assignment_5_oop
 
         //public class Shipment
         //{
-        //    public static int TotalShipmentsCreated = 0;
+        //    public static int TotalShipmentsCreated;
 
         //    public int ShipmentId { get; set; }
         //    public Address DeliveryAddress { get; set; }
+
+        //    static Shipment()
+        //    {
+        //        TotalShipmentsCreated = 0;
+        //        Console.WriteLine("Shipment System Initialized");
+        //    }
 
         //    public Shipment()
         //    {
@@ -542,11 +594,11 @@ namespace Assignment_5_oop
         //    {
         //        Shipment shipment1 = new Shipment();
         //        Shipment shipment2 = new Shipment();
-        //        Shipment shipment3 = new Shipment();
 
-        //        Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
+        //        Console.WriteLine($"Total Shipments: {Shipment.TotalShipmentsCreated}");
         //    }
         
+
 
 
 
