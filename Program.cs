@@ -2,6 +2,7 @@
 using Microsoft.VisualBasic;
 using System.ComponentModel;
 using System.Diagnostics.Contracts;
+using System.Diagnostics.Metrics;
 using System.Net;
 using System.Numerics;
 using System.Runtime.InteropServices;
@@ -72,13 +73,13 @@ namespace Assignment_5_oop
             //When you assign one object variable to another reference - type variable(e.g., obj2 = obj1), the assignment copies only the memory address(reference) from the Stack, not the actual object in the Heap. Both variables end up pointing to the exact same object in memory, so any modification made through one variable will be reflected in the other.
 
 
-//b) Does assigning one object to another create a new object? Explain.
+            //b) Does assigning one object to another create a new object? Explain.
 
 
 
-//When you assign one object variable to another, a new object is not created.
+            //When you assign one object variable to another, a new object is not created.
 
-//Only the reference(memory address) in the Stack is copied, so both variables end up pointing to the same existing object in the Heap. Any modification made through one variable will directly affect the other.
+            //Only the reference(memory address) in the Stack is copied, so both variables end up pointing to the same existing object in the Heap. Any modification made through one variable will directly affect the other.
 
 
             //c) What is the difference between copying an object and copying its reference ?
@@ -86,14 +87,82 @@ namespace Assignment_5_oop
 
 
 
-//                Copying a reference: Copies only the memory address stored in the Stack without creating a new object.Both variables point to the same object in the Heap, so changing one affects the other.
+            //                Copying a reference: Copies only the memory address stored in the Stack without creating a new object.Both variables point to the same object in the Heap, so changing one affects the other.
 
-//Copying an object(Shallow / Deep Copy): Creates a brand new object in the Heap with its own separate memory address.
+            //Copying an object(Shallow / Deep Copy): Creates a brand new object in the Heap with its own separate memory address.
 
-//Shallow Copy: Copies value-type fields directly, but duplicates references for reference - type fields.
+            //Shallow Copy: Copies value-type fields directly, but duplicates references for reference - type fields.
 
-//Deep Copy: Creates a completely independent clone, including new instances for all referenced objects inside it.
+            //Deep Copy: Creates a completely independent clone, including new instances for all referenced objects inside it.
 
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+            #region Q2 Shallow Copy vs Deep Copy
+
+//            //            a) What is a Shallow Copy?
+//            A Shallow Copy creates a new object instance and copies all fields of the original object to the new one.
+
+//            Value- type fields(like int, double, bool) are copied by value, creating independent copies.
+
+//Reference - type fields(like objects or arrays) copy only their memory addresses(references), meaning both the original and copied objects end up sharing and pointing to the exact same underlying reference objects in memory.
+
+
+
+////b) What is a Deep Copy?
+//A Deep Copy creates a completely new object instance along with duplicate copies of all referenced objects nested inside it.
+
+//Value - type fields are copied directly by value.
+
+//Reference - type fields are also fully duplicated, meaning new object instances are created in memory for each referenced object.
+
+//As a result, the original object and the copied object are 100 % independent; changing any data or nested objects in one will never affect the other.
+
+
+
+
+
+//            //c) What happens to reference-type members when a Shallow Copy is created?
+
+
+//When a Shallow Copy is created, the memory addresses(references) of reference - type members are copied to the new object, rather than creating new object instances.
+
+//Both the original object and the copied object end up sharing and pointing to the exact same reference - type objects in memory.Modifying the internal state of a reference-type member through one object will directly change it for the other.
+
+
+
+
+
+
+
+
+
+
+//            //d) What happens to reference-type members when a Deep Copy is created?
+
+
+//            When a Deep Copy is created, brand new instances of all reference-type members are instantiated in memory, and their internal values are duplicated.
+
+//Instead of sharing references, the new object gets its own separate reference-type objects.Modifying a reference - type member in the copied object will have zero effect on the original object.
+
+
+
+//        //e) Give one situation where Deep Copy would be safer than Shallow Copy.
+
+//            A Deep Copy is safer when an object contains a mutable reference - type member(like a List, Array, or custom class object) that should be modified independently without accidentally altering or corrupting the original object's state.
+
+//Example:
+//In a Smart Delivery Management System, if an order contains an OrderHistory or PackageItems list, using a Shallow Copy means modifying the items in a duplicated order will also alter the original customer's order. A Deep Copy ensures the cloned order maintains its own separate items list.
 
             #endregion
 
