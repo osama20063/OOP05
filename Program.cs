@@ -733,24 +733,90 @@ namespace Assignment_5_oop
 
             #region  
 
-        //    public class Shipment
+            //    public class Shipment
+            //{
+            //    public string TrackingCode { get; set; }
+            //    public string Type { get; set; }
+            //    public double WeightInKg { get; set; }
+            //    public string TrackingStatus { get; set; }
+            //}
+
+            //public static class ShipmentExtensions
+            //{
+            //    public static string GetSummary(this Shipment shipment)
+            //    {
+            //        return $"{shipment.TrackingCode} | {shipment.Type} | {shipment.WeightInKg} KG | {shipment.TrackingStatus}";
+            //    }
+
+            //    public static bool IsDelivered(this Shipment shipment)
+            //    {
+            //        return shipment.TrackingStatus?.Equals("Delivered", StringComparison.OrdinalIgnoreCase) ?? false;
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment shipment1 = new Shipment
+            //        {
+            //            TrackingCode = "SH001",
+            //            Type = "Standard",
+            //            WeightInKg = 3,
+            //            TrackingStatus = "In Transit"
+            //        };
+
+            //        Shipment shipment2 = new Shipment
+            //        {
+            //            TrackingCode = "SH002",
+            //            Type = "Express",
+            //            WeightInKg = 1.5,
+            //            TrackingStatus = "Delivered"
+            //        };
+
+            //        Console.WriteLine(shipment1.GetSummary());
+            //        Console.WriteLine($"Is Delivered? {shipment1.IsDelivered()}");
+
+            //        Console.WriteLine(shipment2.GetSummary());
+            //        Console.WriteLine($"Is Delivered? {shipment2.IsDelivered()}");
+            //    }
+            //}
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+            #region 10
+
+
+        //    public partial class Shipment
         //{
-        //    public string TrackingCode { get; set; }
-        //    public string Type { get; set; }
-        //    public double WeightInKg { get; set; }
         //    public string TrackingStatus { get; set; }
+
+        //    partial void OnTrackingStatusChanged(string newStatus);
+
+        //    public void UpdateTrackingStatus(string newStatus)
+        //    {
+        //        TrackingStatus = newStatus;
+        //        OnTrackingStatusChanged(newStatus);
+        //    }
         //}
 
-        //public static class ShipmentExtensions
+        
+        //public partial class Shipment
         //{
-        //    public static string GetSummary(this Shipment shipment)
+        //    partial void OnTrackingStatusChanged(string newStatus)
         //    {
-        //        return $"{shipment.TrackingCode} | {shipment.Type} | {shipment.WeightInKg} KG | {shipment.TrackingStatus}";
-        //    }
-
-        //    public static bool IsDelivered(this Shipment shipment)
-        //    {
-        //        return shipment.TrackingStatus?.Equals("Delivered", StringComparison.OrdinalIgnoreCase) ?? false;
+        //        Console.WriteLine($"Tracking status changed to: {newStatus}");
         //    }
         //}
 
@@ -758,33 +824,14 @@ namespace Assignment_5_oop
         //{
         //    static void Main()
         //    {
-        //        Shipment shipment1 = new Shipment
-        //        {
-        //            TrackingCode = "SH001",
-        //            Type = "Standard",
-        //            WeightInKg = 3,
-        //            TrackingStatus = "In Transit"
-        //        };
-
-        //        Shipment shipment2 = new Shipment
-        //        {
-        //            TrackingCode = "SH002",
-        //            Type = "Express",
-        //            WeightInKg = 1.5,
-        //            TrackingStatus = "Delivered"
-        //        };
-
-        //        Console.WriteLine(shipment1.GetSummary());
-        //        Console.WriteLine($"Is Delivered? {shipment1.IsDelivered()}");
-
-        //        Console.WriteLine(shipment2.GetSummary());
-        //        Console.WriteLine($"Is Delivered? {shipment2.IsDelivered()}");
+        //        Shipment shipment = new Shipment();
+        //        shipment.UpdateTrackingStatus("Out For Delivery");
         //    }
-        //}
+
 
 
 
             #endregion
-    }
+        }
     }
 }
