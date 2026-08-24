@@ -6,6 +6,7 @@ using System.Diagnostics.Metrics;
 using System.Net;
 using System.Numerics;
 using System.Reflection;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Threading.Channels;
 using System.Xml;
@@ -179,49 +180,85 @@ namespace Assignment_5_oop
             //            a) What is a static field, and how is it different from an instance field ?
 
 
-//            A static field belongs to the class itself rather than to any specific object instance.
+            //            A static field belongs to the class itself rather than to any specific object instance.
 
-//Static Field: A single copy of the variable is shared across all instances of the class. Modifying it in one place changes it for all objects.
+            //Static Field: A single copy of the variable is shared across all instances of the class. Modifying it in one place changes it for all objects.
 
-//Instance Field: Each object created from the class receives its own separate copy of the field, holding data unique to that specific instance.
-
-
-
-
-//            //b) What is a static method? Can a static method directly access instance members?
-
-
-//            A static method is a method that belongs to the class itself rather than any specific object instance.It can be called directly using the class name without instantiating an object.
-
-//Accessing Instance Members: No, a static method cannot directly access instance members(fields or methods). Static methods execute without a this pointer or reference to a specific object instance. To access instance members, an instance of the class must be passed explicitly into the static method.
-
-//        //c) What is a static constructor, and when is it executed ?
-
-
-//        A static constructor is a special constructor used to initialize any static data or perform a specific action that needs to be executed only once for a class.
-
-//Execution Timing: It is executed automatically by the runtime before the first instance of the class is created or before any static members are accessed.It cannot be called directly and runs at most once per application domain.
+            //Instance Field: Each object created from the class receives its own separate copy of the field, holding data unique to that specific instance.
 
 
 
 
-//    //d) What is a static class? Can you create an object from a static class?
+            //            //b) What is a static method? Can a static method directly access instance members?
 
 
-//        A static class is a class marked with the static keyword that can only contain static members(such as static methods, properties, and fields) and cannot be inherited.
+            //            A static method is a method that belongs to the class itself rather than any specific object instance.It can be called directly using the class name without instantiating an object.
 
-//Creating Objects: No, you cannot create an object from a static class using the new keyword.It is automatically loaded by the.NET runtime and accessed directly by its class name.
+            //Accessing Instance Members: No, a static method cannot directly access instance members(fields or methods). Static methods execute without a this pointer or reference to a specific object instance. To access instance members, an instance of the class must be passed explicitly into the static method.
 
-
-
-
+            //        //c) What is a static constructor, and when is it executed ?
 
 
-    #endregion
+            //        A static constructor is a special constructor used to initialize any static data or perform a specific action that needs to be executed only once for a class.
+
+            //Execution Timing: It is executed automatically by the runtime before the first instance of the class is created or before any static members are accessed.It cannot be called directly and runs at most once per application domain.
 
 
 
 
-        }
+            //    //d) What is a static class? Can you create an object from a static class?
+
+
+            //        A static class is a class marked with the static keyword that can only contain static members(such as static methods, properties, and fields) and cannot be inherited.
+
+            //Creating Objects: No, you cannot create an object from a static class using the new keyword.It is automatically loaded by the.NET runtime and accessed directly by its class name.
+
+
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+
+            #region Q4 Extension Methods
+
+
+            //            a) What is an Extension Method?
+
+//            An extension method allows you to add new methods to an existing type without modifying its original source code, creating a derived type, or recompiling it.They are static methods that can be called as if they were instance methods on the extended type using dot notation.
+
+////b) What keyword must be used in the first parameter of an extension method?
+
+
+//                The this keyword must be used before the first parameter of an extension method to specify which type the method extends.
+
+
+//            //c) Where must an extension method be declared?
+
+//                An extension method must be declared inside a static class that is non-nested(top-level). Both the class and the extension method itself must be marked as static.
+
+
+//            //d) Can an extension method access private members of the class it extends?
+
+//            No, an extension method cannot access private (or protected) members of the class it extends.
+
+//Extension methods operate outside the target class's scope, so they only have access to its public and internal members.
+
+
+
+
+
+
+            #endregion
+
+    }
     }
 }
