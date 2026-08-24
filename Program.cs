@@ -5,8 +5,10 @@ using System.Diagnostics.Contracts;
 using System.Diagnostics.Metrics;
 using System.Net;
 using System.Numerics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading.Channels;
+using System.Xml;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -110,36 +112,34 @@ namespace Assignment_5_oop
 
             #region Q2 Shallow Copy vs Deep Copy
 
-//            //            a) What is a Shallow Copy?
-//            A Shallow Copy creates a new object instance and copies all fields of the original object to the new one.
+            //            //            a) What is a Shallow Copy?
+            //            A Shallow Copy creates a new object instance and copies all fields of the original object to the new one.
 
-//            Value- type fields(like int, double, bool) are copied by value, creating independent copies.
+            //            Value- type fields(like int, double, bool) are copied by value, creating independent copies.
 
-//Reference - type fields(like objects or arrays) copy only their memory addresses(references), meaning both the original and copied objects end up sharing and pointing to the exact same underlying reference objects in memory.
-
-
-
-////b) What is a Deep Copy?
-//A Deep Copy creates a completely new object instance along with duplicate copies of all referenced objects nested inside it.
-
-//Value - type fields are copied directly by value.
-
-//Reference - type fields are also fully duplicated, meaning new object instances are created in memory for each referenced object.
-
-//As a result, the original object and the copied object are 100 % independent; changing any data or nested objects in one will never affect the other.
+            //Reference - type fields(like objects or arrays) copy only their memory addresses(references), meaning both the original and copied objects end up sharing and pointing to the exact same underlying reference objects in memory.
 
 
 
+            ////b) What is a Deep Copy?
+            //A Deep Copy creates a completely new object instance along with duplicate copies of all referenced objects nested inside it.
+
+            //Value - type fields are copied directly by value.
+
+            //Reference - type fields are also fully duplicated, meaning new object instances are created in memory for each referenced object.
+
+            //As a result, the original object and the copied object are 100 % independent; changing any data or nested objects in one will never affect the other.
 
 
-//            //c) What happens to reference-type members when a Shallow Copy is created?
 
 
-//When a Shallow Copy is created, the memory addresses(references) of reference - type members are copied to the new object, rather than creating new object instances.
 
-//Both the original object and the copied object end up sharing and pointing to the exact same reference - type objects in memory.Modifying the internal state of a reference-type member through one object will directly change it for the other.
+            //            //c) What happens to reference-type members when a Shallow Copy is created?
 
 
+            //When a Shallow Copy is created, the memory addresses(references) of reference - type members are copied to the new object, rather than creating new object instances.
+
+            //Both the original object and the copied object end up sharing and pointing to the exact same reference - type objects in memory.Modifying the internal state of a reference-type member through one object will directly change it for the other.
 
 
 
@@ -148,23 +148,78 @@ namespace Assignment_5_oop
 
 
 
-//            //d) What happens to reference-type members when a Deep Copy is created?
 
 
-//            When a Deep Copy is created, brand new instances of all reference-type members are instantiated in memory, and their internal values are duplicated.
-
-//Instead of sharing references, the new object gets its own separate reference-type objects.Modifying a reference - type member in the copied object will have zero effect on the original object.
+            //            //d) What happens to reference-type members when a Deep Copy is created?
 
 
+            //            When a Deep Copy is created, brand new instances of all reference-type members are instantiated in memory, and their internal values are duplicated.
 
-//        //e) Give one situation where Deep Copy would be safer than Shallow Copy.
+            //Instead of sharing references, the new object gets its own separate reference-type objects.Modifying a reference - type member in the copied object will have zero effect on the original object.
 
-//            A Deep Copy is safer when an object contains a mutable reference - type member(like a List, Array, or custom class object) that should be modified independently without accidentally altering or corrupting the original object's state.
 
-//Example:
-//In a Smart Delivery Management System, if an order contains an OrderHistory or PackageItems list, using a Shallow Copy means modifying the items in a duplicated order will also alter the original customer's order. A Deep Copy ensures the cloned order maintains its own separate items list.
+
+            //        //e) Give one situation where Deep Copy would be safer than Shallow Copy.
+
+            //            A Deep Copy is safer when an object contains a mutable reference - type member(like a List, Array, or custom class object) that should be modified independently without accidentally altering or corrupting the original object's state.
+
+            //Example:
+            //In a Smart Delivery Management System, if an order contains an OrderHistory or PackageItems list, using a Shallow Copy means modifying the items in a duplicated order will also alter the original customer's order. A Deep Copy ensures the cloned order maintains its own separate items list.
 
             #endregion
+
+
+
+
+
+            #region Q3 Static Members
+
+
+
+            //            a) What is a static field, and how is it different from an instance field ?
+
+
+//            A static field belongs to the class itself rather than to any specific object instance.
+
+//Static Field: A single copy of the variable is shared across all instances of the class. Modifying it in one place changes it for all objects.
+
+//Instance Field: Each object created from the class receives its own separate copy of the field, holding data unique to that specific instance.
+
+
+
+
+//            //b) What is a static method? Can a static method directly access instance members?
+
+
+//            A static method is a method that belongs to the class itself rather than any specific object instance.It can be called directly using the class name without instantiating an object.
+
+//Accessing Instance Members: No, a static method cannot directly access instance members(fields or methods). Static methods execute without a this pointer or reference to a specific object instance. To access instance members, an instance of the class must be passed explicitly into the static method.
+
+//        //c) What is a static constructor, and when is it executed ?
+
+
+//        A static constructor is a special constructor used to initialize any static data or perform a specific action that needs to be executed only once for a class.
+
+//Execution Timing: It is executed automatically by the runtime before the first instance of the class is created or before any static members are accessed.It cannot be called directly and runs at most once per application domain.
+
+
+
+
+//    //d) What is a static class? Can you create an object from a static class?
+
+
+//        A static class is a class marked with the static keyword that can only contain static members(such as static methods, properties, and fields) and cannot be inherited.
+
+//Creating Objects: No, you cannot create an object from a static class using the new keyword.It is automatically loaded by the.NET runtime and accessed directly by its class name.
+
+
+
+
+
+
+    #endregion
+
+
 
 
         }
