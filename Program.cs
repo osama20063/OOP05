@@ -453,6 +453,71 @@ namespace Assignment_5_oop
 
 
 
+            //    public class Address
+            //{
+            //    public string City { get; set; }
+            //}
+
+            //public class Shipment
+            //{
+            //    public int ShipmentId { get; set; }
+            //    public Address DeliveryAddress { get; set; }
+
+            //    public Shipment DeepCopy()
+            //    {
+            //        return new Shipment
+            //        {
+            //            ShipmentId = this.ShipmentId,
+            //            DeliveryAddress = new Address
+            //            {
+            //                City = this.DeliveryAddress?.City
+            //            }
+            //        };
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment originalShipment = new Shipment
+            //        {
+            //            ShipmentId = 1,
+            //            DeliveryAddress = new Address { City = "Cairo" }
+            //        };
+
+            //        Shipment copiedShipment = originalShipment.DeepCopy();
+
+            //        Console.WriteLine($"Before change:\t\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
+
+            //        copiedShipment.DeliveryAddress.City = "Giza";
+
+            //        Console.WriteLine($"After changing copied:\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
+
+            //        bool isSameAddress = object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress);
+            //        Console.WriteLine($"Same DeliveryAddress object?\t{isSameAddress}");
+            //    }
+
+
+
+
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+
+            #region  4 Static Field
+
+
         //    public class Address
         //{
         //    public string City { get; set; }
@@ -460,19 +525,14 @@ namespace Assignment_5_oop
 
         //public class Shipment
         //{
+        //    public static int TotalShipmentsCreated = 0;
+
         //    public int ShipmentId { get; set; }
         //    public Address DeliveryAddress { get; set; }
 
-        //    public Shipment DeepCopy()
+        //    public Shipment()
         //    {
-        //        return new Shipment
-        //        {
-        //            ShipmentId = this.ShipmentId,
-        //            DeliveryAddress = new Address
-        //            {
-        //                City = this.DeliveryAddress?.City
-        //            }
-        //        };
+        //        TotalShipmentsCreated++;
         //    }
         //}
 
@@ -480,27 +540,13 @@ namespace Assignment_5_oop
         //{
         //    static void Main()
         //    {
-        //        Shipment originalShipment = new Shipment
-        //        {
-        //            ShipmentId = 1,
-        //            DeliveryAddress = new Address { City = "Cairo" }
-        //        };
+        //        Shipment shipment1 = new Shipment();
+        //        Shipment shipment2 = new Shipment();
+        //        Shipment shipment3 = new Shipment();
 
-        //        Shipment copiedShipment = originalShipment.DeepCopy();
-
-        //        Console.WriteLine($"Before change:\t\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
-
-        //        copiedShipment.DeliveryAddress.City = "Giza";
-
-        //        Console.WriteLine($"After changing copied:\tOriginal: {originalShipment.DeliveryAddress.City}\tCopied: {copiedShipment.DeliveryAddress.City}");
-
-        //        bool isSameAddress = object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress);
-        //        Console.WriteLine($"Same DeliveryAddress object?\t{isSameAddress}");
+        //        Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
         //    }
         
-
-
-
 
 
 
