@@ -798,36 +798,58 @@ namespace Assignment_5_oop
             #region 10
 
 
-        //    public partial class Shipment
-        //{
-        //    public string TrackingStatus { get; set; }
+            //    public partial class Shipment
+            //{
+            //    public string TrackingStatus { get; set; }
 
-        //    partial void OnTrackingStatusChanged(string newStatus);
+            //    partial void OnTrackingStatusChanged(string newStatus);
 
-        //    public void UpdateTrackingStatus(string newStatus)
-        //    {
-        //        TrackingStatus = newStatus;
-        //        OnTrackingStatusChanged(newStatus);
-        //    }
-        //}
+            //    public void UpdateTrackingStatus(string newStatus)
+            //    {
+            //        TrackingStatus = newStatus;
+            //        OnTrackingStatusChanged(newStatus);
+            //    }
+            //}
 
-        
-        //public partial class Shipment
-        //{
-        //    partial void OnTrackingStatusChanged(string newStatus)
-        //    {
-        //        Console.WriteLine($"Tracking status changed to: {newStatus}");
-        //    }
-        //}
 
-        //class Program
-        //{
-        //    static void Main()
-        //    {
-        //        Shipment shipment = new Shipment();
-        //        shipment.UpdateTrackingStatus("Out For Delivery");
-        //    }
+            //public partial class Shipment
+            //{
+            //    partial void OnTrackingStatusChanged(string newStatus)
+            //    {
+            //        Console.WriteLine($"Tracking status changed to: {newStatus}");
+            //    }
+            //}
 
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment shipment = new Shipment();
+            //        shipment.UpdateTrackingStatus("Out For Delivery");
+            //    }
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+
+            #region 11
+
+
+
+
+
+
+
+          // ؟؟
 
 
 
