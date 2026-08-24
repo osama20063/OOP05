@@ -1,6 +1,8 @@
 ﻿
 using Microsoft.VisualBasic;
+using System.Collections;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
 using System.Diagnostics.Metrics;
 using System.Net;
@@ -233,24 +235,24 @@ namespace Assignment_5_oop
 
             //            a) What is an Extension Method?
 
-//            An extension method allows you to add new methods to an existing type without modifying its original source code, creating a derived type, or recompiling it.They are static methods that can be called as if they were instance methods on the extended type using dot notation.
+            //            An extension method allows you to add new methods to an existing type without modifying its original source code, creating a derived type, or recompiling it.They are static methods that can be called as if they were instance methods on the extended type using dot notation.
 
-////b) What keyword must be used in the first parameter of an extension method?
-
-
-//                The this keyword must be used before the first parameter of an extension method to specify which type the method extends.
+            ////b) What keyword must be used in the first parameter of an extension method?
 
 
-//            //c) Where must an extension method be declared?
-
-//                An extension method must be declared inside a static class that is non-nested(top-level). Both the class and the extension method itself must be marked as static.
+            //                The this keyword must be used before the first parameter of an extension method to specify which type the method extends.
 
 
-//            //d) Can an extension method access private members of the class it extends?
+            //            //c) Where must an extension method be declared?
 
-//            No, an extension method cannot access private (or protected) members of the class it extends.
+            //                An extension method must be declared inside a static class that is non-nested(top-level). Both the class and the extension method itself must be marked as static.
 
-//Extension methods operate outside the target class's scope, so they only have access to its public and internal members.
+
+            //            //d) Can an extension method access private members of the class it extends?
+
+            //            No, an extension method cannot access private (or protected) members of the class it extends.
+
+            //Extension methods operate outside the target class's scope, so they only have access to its public and internal members.
 
 
 
@@ -259,6 +261,61 @@ namespace Assignment_5_oop
 
             #endregion
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+            #region  Q5 Partial Classes and Partial Methods
+
+
+            //            a) What is a Partial Class?
+
+
+
+//            A partial class allows the definition of a single class to be split across multiple.cs source files using the partial keyword.All parts are combined into a single class when the code is compiled.
+
+
+
+
+////b) Why would a developer split one class into multiple files?
+//Developers split a class into multiple files to:
+
+//Separate auto-generated code from custom code: Prevents tool-generated code(like EF Core models or UI designers) from overwriting custom logic during updates.
+
+//Enable parallel teamwork: Allows multiple developers to work on different parts of the same class simultaneously without source control merge conflicts.
+
+//Improve code organization: Keeps large classes clean, readable, and organized by feature or layer.
+
+
+
+//    //c) What is a Partial Method?
+
+
+//        A partial method is a method declared within a partial class that has its signature defined in one file and its optional implementation written in another file.
+
+//It must return void and cannot have access modifiers (it is implicitly private).
+
+//It allows generated code to provide method hooks that developers can optionally implement without causing compiler errors.
+
+
+
+//    //d) What happens if a declared partial method has no implementation?
+
+//        If a declared partial method has no implementation, the compiler completely removes its call and declaration from the compiled assembly(.dll or .exe).
+
+//No Performance Cost: It generates zero IL(Intermediate Language) code, meaning there is no execution overhead at runtime.
+
+//No Compiler Error: The project builds normally without throwing an unhandled exception or missing method error.
+
+    #endregion
+        }
     }
 }
