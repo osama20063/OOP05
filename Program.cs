@@ -280,42 +280,106 @@ namespace Assignment_5_oop
 
 
 
-//            A partial class allows the definition of a single class to be split across multiple.cs source files using the partial keyword.All parts are combined into a single class when the code is compiled.
+            //            A partial class allows the definition of a single class to be split across multiple.cs source files using the partial keyword.All parts are combined into a single class when the code is compiled.
 
 
 
 
-////b) Why would a developer split one class into multiple files?
-//Developers split a class into multiple files to:
+            ////b) Why would a developer split one class into multiple files?
+            //Developers split a class into multiple files to:
 
-//Separate auto-generated code from custom code: Prevents tool-generated code(like EF Core models or UI designers) from overwriting custom logic during updates.
+            //Separate auto-generated code from custom code: Prevents tool-generated code(like EF Core models or UI designers) from overwriting custom logic during updates.
 
-//Enable parallel teamwork: Allows multiple developers to work on different parts of the same class simultaneously without source control merge conflicts.
+            //Enable parallel teamwork: Allows multiple developers to work on different parts of the same class simultaneously without source control merge conflicts.
 
-//Improve code organization: Keeps large classes clean, readable, and organized by feature or layer.
-
-
-
-//    //c) What is a Partial Method?
-
-
-//        A partial method is a method declared within a partial class that has its signature defined in one file and its optional implementation written in another file.
-
-//It must return void and cannot have access modifiers (it is implicitly private).
-
-//It allows generated code to provide method hooks that developers can optionally implement without causing compiler errors.
+            //Improve code organization: Keeps large classes clean, readable, and organized by feature or layer.
 
 
 
-//    //d) What happens if a declared partial method has no implementation?
+            //    //c) What is a Partial Method?
 
-//        If a declared partial method has no implementation, the compiler completely removes its call and declaration from the compiled assembly(.dll or .exe).
 
-//No Performance Cost: It generates zero IL(Intermediate Language) code, meaning there is no execution overhead at runtime.
+            //        A partial method is a method declared within a partial class that has its signature defined in one file and its optional implementation written in another file.
 
-//No Compiler Error: The project builds normally without throwing an unhandled exception or missing method error.
+            //It must return void and cannot have access modifiers (it is implicitly private).
 
-    #endregion
-        }
+            //It allows generated code to provide method hooks that developers can optionally implement without causing compiler errors.
+
+
+
+            //    //d) What happens if a declared partial method has no implementation?
+
+            //        If a declared partial method has no implementation, the compiler completely removes its call and declaration from the compiled assembly(.dll or .exe).
+
+            //No Performance Cost: It generates zero IL(Intermediate Language) code, meaning there is no execution overhead at runtime.
+
+            //No Compiler Error: The project builds normally without throwing an unhandled exception or missing method error.
+
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+            #region Part 02 — Practical
+
+            //1 Object Copying
+            //Add object-copying functionality to the Shipment class.
+            //• Create a method: Shipment CopyShipment().
+            //• The method should create a copy of the current shipment.
+            //• Demonstrate the difference between assigning one object variable to another and creating an actual copy.
+            //Shipment shipment2 = shipment1;
+
+
+           
+//public class Shipment
+//        {
+//            public int ShipmentId { get; set; }
+//            public string TrackingNumber { get; set; }
+//            public string Destination { get; set; }
+
+//            public Shipment CopyShipment()
+//            {
+//                return new Shipment
+//                {
+//                    ShipmentId = this.ShipmentId,
+//                    TrackingNumber = this.TrackingNumber,
+//                    Destination = this.Destination
+//                };
+//            }
+//        }
+
+        //class Program
+        //{
+        //    static void Main()
+        //    {
+        //        Shipment shipment1 = new Shipment
+        //        {
+        //            ShipmentId = 101,
+        //            TrackingNumber = "TRK123",
+        //            Destination = "Cairo"
+        //        };
+
+        //        Shipment referenceCopy = shipment1;
+        //        Shipment actualCopy = shipment1.CopyShipment();
+
+        //        shipment1.Destination = "Alexandria";
+
+        //        Console.WriteLine(referenceCopy.Destination);
+        //        Console.WriteLine(actualCopy.Destination);
+        //    }
+        
+
+
+
+            #endregion
+    }
     }
 }
