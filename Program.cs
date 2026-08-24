@@ -10,6 +10,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
 using System.Threading.Channels;
 using System.Xml;
 using System.Xml.Linq;
@@ -338,48 +339,110 @@ namespace Assignment_5_oop
             //Shipment shipment2 = shipment1;
 
 
-           
-//public class Shipment
-//        {
-//            public int ShipmentId { get; set; }
-//            public string TrackingNumber { get; set; }
-//            public string Destination { get; set; }
 
-//            public Shipment CopyShipment()
-//            {
-//                return new Shipment
-//                {
-//                    ShipmentId = this.ShipmentId,
-//                    TrackingNumber = this.TrackingNumber,
-//                    Destination = this.Destination
-//                };
-//            }
-//        }
+            //public class Shipment
+            //        {
+            //            public int ShipmentId { get; set; }
+            //            public string TrackingNumber { get; set; }
+            //            public string Destination { get; set; }
+
+            //            public Shipment CopyShipment()
+            //            {
+            //                return new Shipment
+            //                {
+            //                    ShipmentId = this.ShipmentId,
+            //                    TrackingNumber = this.TrackingNumber,
+            //                    Destination = this.Destination
+            //                };
+            //            }
+            //        }
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment shipment1 = new Shipment
+            //        {
+            //            ShipmentId = 101,
+            //            TrackingNumber = "TRK123",
+            //            Destination = "Cairo"
+            //        };
+
+            //        Shipment referenceCopy = shipment1;
+            //        Shipment actualCopy = shipment1.CopyShipment();
+
+            //        shipment1.Destination = "Alexandria";
+
+            //        Console.WriteLine(referenceCopy.Destination);
+            //        Console.WriteLine(actualCopy.Destination);
+            //    }
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+
+            #region 2 Shallow Copy
+
+
+            //• Create Shipment ShallowCopy().
+            //• Use MemberwiseClone() to create the copy.
+            //• The original and copied Shipment objects must be different objects.
+            //• Their DeliveryAddress objects must still reference the same object.
+            //• Change the address through the copied shipment and demonstrate that the original shipment's address is also
+            //affected.
+
+
+
+        //    public class Address
+        //{
+        //    public string City { get; set; }
+        //}
+
+        //public class Shipment
+        //{
+        //    public int ShipmentId { get; set; }
+        //    public Address DeliveryAddress { get; set; }
+
+        //    public Shipment ShallowCopy()
+        //    {
+        //        return (Shipment)this.MemberwiseClone();
+        //    }
+        //}
 
         //class Program
         //{
         //    static void Main()
         //    {
-        //        Shipment shipment1 = new Shipment
+        //        Shipment originalShipment = new Shipment
         //        {
-        //            ShipmentId = 101,
-        //            TrackingNumber = "TRK123",
-        //            Destination = "Cairo"
+        //            ShipmentId = 1,
+        //            DeliveryAddress = new Address { City = "Cairo" }
         //        };
 
-        //        Shipment referenceCopy = shipment1;
-        //        Shipment actualCopy = shipment1.CopyShipment();
+        //        Shipment copiedShipment = originalShipment.ShallowCopy();
 
-        //        shipment1.Destination = "Alexandria";
+        //        copiedShipment.DeliveryAddress.City = "Alexandria";
 
-        //        Console.WriteLine(referenceCopy.Destination);
-        //        Console.WriteLine(actualCopy.Destination);
+        //        Console.WriteLine(originalShipment.DeliveryAddress.City);
+        //        Console.WriteLine(copiedShipment.DeliveryAddress.City);
+
+        //        Console.WriteLine(object.ReferenceEquals(originalShipment, copiedShipment));
+        //        Console.WriteLine(object.ReferenceEquals(originalShipment.DeliveryAddress, copiedShipment.DeliveryAddress));
         //    }
-        
-
-
+        //}
 
             #endregion
+
+
+
     }
     }
 }
