@@ -614,9 +614,75 @@ namespace Assignment_5_oop
             #region 6 Static Method
 
 
-        //    public class Address
+            //    public class Address
+            //{
+            //    public string City { get; set; }
+            //}
+
+            //public class Shipment
+            //{
+            //    private static int TotalShipmentsCreated = 0;
+
+            //    public int ShipmentId { get; set; }
+            //    public Address DeliveryAddress { get; set; }
+
+            //    static Shipment()
+            //    {
+            //        Console.WriteLine("Shipment System Initialized");
+            //    }
+
+            //    public Shipment()
+            //    {
+            //        TotalShipmentsCreated++;
+            //    }
+
+            //    public static int GetTotalShipmentsCreated()
+            //    {
+            //        return TotalShipmentsCreated;
+            //    }
+            //}
+
+            //class Program
+            //{
+            //    static void Main()
+            //    {
+            //        Shipment shipment1 = new Shipment();
+            //        Shipment shipment2 = new Shipment();
+            //        Shipment shipment3 = new Shipment();
+
+            //        Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
+            //    }
+
+
+
+
+            #endregion
+
+
+
+
+
+
+
+            #region 7 Static Class
+
+
+
+
+
+        //    public static class DeliveryUtilities
         //{
-        //    public string City { get; set; }
+        //    public static void PrintSystemTitle()
+        //    {
+        //        Console.WriteLine("=================================");
+        //        Console.WriteLine("     SHIPMENT MANAGEMENT SYSTEM  ");
+        //        Console.WriteLine("=================================");
+        //    }
+
+        //    public static void PrintSeparator()
+        //    {
+        //        Console.WriteLine("---------------------------------");
+        //    }
         //}
 
         //public class Shipment
@@ -624,12 +690,6 @@ namespace Assignment_5_oop
         //    private static int TotalShipmentsCreated = 0;
 
         //    public int ShipmentId { get; set; }
-        //    public Address DeliveryAddress { get; set; }
-
-        //    static Shipment()
-        //    {
-        //        Console.WriteLine("Shipment System Initialized");
-        //    }
 
         //    public Shipment()
         //    {
@@ -646,15 +706,17 @@ namespace Assignment_5_oop
         //{
         //    static void Main()
         //    {
+        //        DeliveryUtilities.PrintSystemTitle();
+
         //        Shipment shipment1 = new Shipment();
         //        Shipment shipment2 = new Shipment();
-        //        Shipment shipment3 = new Shipment();
 
-        //        Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
+        //        DeliveryUtilities.PrintSeparator();
+
+        //        Console.WriteLine($"Total Shipments: {Shipment.GetTotalShipmentsCreated()}");
+
+        //        DeliveryUtilities.PrintSeparator();
         //    }
-
-
-
 
             #endregion
         }
